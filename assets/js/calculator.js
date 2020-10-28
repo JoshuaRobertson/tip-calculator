@@ -3,6 +3,19 @@ let container = document.getElementById('tip-container')
 
 container.addEventListener('input', update)
 
+function formatMoney (value) {
+  value = Math.ceil(value * 100) / 100
+  value = value.toFixed(2)
+
+  return '£ ' + value
+}
+
+function formatSplit (value) {
+  if (value === '1') return value + ' person'
+  
+  return value + ' people'
+}
+
 // Track input values & update
 function update () {
   let bill       = Number(document.getElementById('yourBill').value)
@@ -15,11 +28,11 @@ function update () {
 
   // Calculate totals based on percentage
   document.getElementById('tipPercent').innerHTML = tipPercent + '%'
-  document.getElementById('tipValue').innerHTML = tipValue
-  document.getElementById('totalWithTip').innerHTML = bill + tipValue
+  document.getElementById('tipValue').innerHTML = formatMoney(tipValue)
+  document.getElementById('totalWithTip').innerHTML = formatMoney(bill + tipValue)
 
   // Calculate individual totals based on split
-  document.getElementById('splitValue').innerHTML = split
-  document.getElementById('billEach').innerHTML = newBillEach
-  document.getElementById('tipEach').innerHTML = tipEach
+  document.getElementById('splitValue').innerHTML = formatSplit(split)
+  document.getElementById('billEach').innerHTML = formatMoney(newBillEach)
+  document.getElementById('tipEach').innerHTML = formatMoney(tipEach)
 }
