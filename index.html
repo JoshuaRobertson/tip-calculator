@@ -7,6 +7,7 @@
   <meta name="keywords" content="HTML, CSS, JavaScript">
   <meta name="author" content="Josh Robertson">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -14,23 +15,23 @@
     <h1>Quick Tip</h1>
 
     <section>
-      <div>
+      <div class="bill">
         <label for="yourBill">Bill</label>
         <input type="number" id="yourBill" placeholder="Your bill" />
       </div>
       <div>
-        <div>
+        <div class="space-between">
           <label for="tipInput">Select tip</label>
           <span id="tipPercent">0%</span>
         </div>
-        <input type="range" id="tipInput" value="0" />
+        <input type="range" id="tipInput" class="range" value="0" />
       </div>
-      <div>
+      <div class="space-between">
         <span>Tip</span>
         <span id="tipValue"></span>
       </div>
       <hr />
-      <div>
+      <div class="total space-between">
         <span>Total</span>
         <span id="totalWithTip"></span>
       </div>
@@ -38,17 +39,17 @@
 
     <section>
       <div>
-        <div>
+        <div class="space-between">
           <label for="splitInput">Split</label>
           <span id="splitValue">1 person</span>
         </div>
-        <input type="range" id="splitInput" min="1" max="10" value="1" />
+        <input type="range" id="splitInput" class="range" min="1" max="10" value="1" />
       </div>
-      <div>
+      <div class="space-between">
         <span>Bill each</span>
         <span id="billEach"></span>
       </div>
-      <div>
+      <div class="space-between">
         <span>Tip each</span>
         <span id="tipEach"></span>
       </div>
